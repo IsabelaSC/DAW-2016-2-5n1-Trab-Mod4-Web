@@ -26,7 +26,7 @@
     </head>
     <body>
         <h2>Edição de Idiomas</h2>
-        <h2><%=idiomaDao.getMensagem()%></h2>
+        <h2><%=idiomaDao.getMensagem()%></h2>.
         <form name="form" id="form" action="ServletIdioma" method="POST">
             Código: <input type="text" name="id" id="id"
                            value="<%= idiomaDao.getObjetoSelecionado().getId() == null

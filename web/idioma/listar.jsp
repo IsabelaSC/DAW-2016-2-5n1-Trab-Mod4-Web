@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>Listagem de idiomas</title>
+        <title>Listagem de idiomas</title>.
     </head>
     <body>
         <a href="../index.html">Inicio</a>

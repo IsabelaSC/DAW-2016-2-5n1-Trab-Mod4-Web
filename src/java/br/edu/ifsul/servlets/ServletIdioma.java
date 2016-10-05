@@ -28,7 +28,7 @@ public class ServletIdioma extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // capturando o dao da sessao
+        // capturando o dao da sessaoO
         IdiomaDAO dao = (IdiomaDAO) request.getSession().getAttribute("idiomaDao");
         if (dao == null){ // caso o dao seja nulo (primeiro acesso) deve inicializa-lo
             dao = new IdiomaDAO();

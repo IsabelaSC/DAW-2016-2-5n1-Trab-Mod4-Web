@@ -15,7 +15,7 @@ public class LivroDAO implements Serializable {
 
     // atributo para armazenar o objeto que está sendo editado
     private Livro objetoSelecionado;
-    // mensagem para ser exibida ao usuário
+    // mensagem para ser exibida ao usuárioO
     private String mensagem = "";
     // objeto responsável por realizar operações de persistencia
     private EntityManager em;

@@ -22,7 +22,7 @@ public class IdiomaDAO implements Serializable {
     }
     
     public boolean validaObjeto(Idioma obj){
-        // criação do objeto que valida os dados da classe Idioma
+        // criação do objeto que valida os dados da classe IdiomaA
         Validator validador = Validation.buildDefaultValidatorFactory().getValidator();
         // armazenando os erros de validação em uma lista
         Set<ConstraintViolation<Idioma>> erros = validador.validate(obj);
