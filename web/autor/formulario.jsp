@@ -4,15 +4,15 @@
     Author     : isabela
 --%>
 
-<%@page import="br.edu.ifsul.dao.FormatoDAO"%>
+<%@page import="br.edu.ifsul.dao.AutorDAO"%>
 <%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
-<jsp:useBean id="formatoDao" scope="session"
-             type="FormatoDAO"/>
+<jsp:useBean id="autorDao" scope="session"
+             type="AutorDAO"/>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>Edição de Formatos</title>
+        <title>Edição de Autores</title>
         <script>
             function doSalvar(){
                 document.getElementById("acao").value = 'salvar';
@@ -25,17 +25,21 @@
         </script>                        
     </head>
     <body>
-        <h2>Edição de Formatos</h2>
-        <h2><%=formatoDao.getMensagem()%></h2>.
-        <form name="form" id="form" action="ServletFormato" method="POST">
+        <h2>Edição de Autores</h2>
+        <h2><%=autorDao.getMensagem()%></h2>.
+        <form name="form" id="form" action="ServletAutor" method="POST">
             Código: <input type="text" name="id" id="id"
-                           value="<%= formatoDao.getObjetoSelecionado().getId() == null
-                           ? "" : formatoDao.getObjetoSelecionado().getId() %>"
+                           value="<%= autorDao.getObjetoSelecionado().getId() == null
+                           ? "" : autorDao.getObjetoSelecionado().getId() %>"
                            size="6" readonly /><br/>
             Nome:  <input type="text" name="nome" id="nome"
-                           value="<%= formatoDao.getObjetoSelecionado().getNome() == null
-                           ? "" : formatoDao.getObjetoSelecionado().getNome() %>"
-                           size="40" /><br/>                     
+                           value="<%= autorDao.getObjetoSelecionado().getNome() == null
+                           ? "" : autorDao.getObjetoSelecionado().getNome() %>"
+                           size="40" /><br/>            
+            UF: <input type="text" name="bibliografia" id="bibliografia"
+                           value="<%= autorDao.getObjetoSelecionado().getBibliografia()== null
+                           ? "" : autorDao.getObjetoSelecionado().getBibliografia()%>"
+                           size="2" /><br/>            
             <input type="button" value="Salvar" name="btnSalvar" onclick="doSalvar()"/> 
             <input type="button" value="Cancelar" name="btnCancelar" onclick="doCancelar()"/>
             <input type="hidden" name="acao" id="acao" value=""/>
