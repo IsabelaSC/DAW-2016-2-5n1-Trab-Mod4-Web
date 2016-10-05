@@ -25,7 +25,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Titulo</th>
-                    <th>Idioma</th>
+                    <th>Idioma</th>                    
                     <th>Alterar</th>
                     <th>Excluir</th>
                 </tr>

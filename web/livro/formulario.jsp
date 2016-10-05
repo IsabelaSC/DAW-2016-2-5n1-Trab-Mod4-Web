@@ -4,6 +4,7 @@
     Author     : isabela
 --%>
 
+<%@page import="br.edu.ifsul.modelo.Formato"%>
 <%@page import="br.edu.ifsul.modelo.Idioma"%>
 <%@page import="br.edu.ifsul.dao.IdiomaDAO"%>
 <%@page import="br.edu.ifsul.dao.LivroDAO"%>
@@ -53,7 +54,22 @@
                     <option value="<%=e.getId()%>" <%=selected%> > <%=e.getNome()%> </option>
                 <%
                   }  
-                %>                        
+                %>         
+            <br/>Formato: 
+            <select name="idFormato" id="idFormato">
+                <%
+                  for (Formato f : formatoDao.getLista())  {
+                      String selected = "";
+                      if (livroDao.getObjetoSelecionado().getFormato()!= null){
+                        if(livroDao.getObjetoSelecionado().getFormato().getId().equals(f.getId())){
+                            selected = "selected";
+                        }                  
+                      }
+                %>    
+                    <option value="<%=f.getId()%>" <%=selected%> > <%=f.getNome()%> </option>
+                <%
+                  }  
+                %>                   
             </select>
             <br/>
             <input type="button" value="Salvar" name="btnSalvar" onclick="doSalvar()"/>
